@@ -21,6 +21,7 @@
 * ### 리스트 추가<br/>
     할 일을 작성하여 추가하는 기능입니다.<br/>
     context API로 남은 할일의 갯수 상태를 증가시킵니다.<br/>
+    
     <img src="https://user-images.githubusercontent.com/47405655/160804566-0d32ce48-975e-4bd0-b0ce-3875ca190aba.png" width="400"/>
   
 * ### 리스트 완료 상태 만들기<br/>
