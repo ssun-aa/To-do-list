@@ -26,5 +26,7 @@
 * ### 리스트 완료 상태 만들기<br/>
     선택한 할일을 완료상태로 만드는 기능입니다<br/>
     <img src="https://user-images.githubusercontent.com/47405655/160805035-cf2b1122-df46-4413-98ff-cb757c253d4e.png"  width="400"/>
-    <img src="https://user-images.githubusercontent.com/47405655/160804400-21ddcbc8-81d7-4b93-b632-197d7f25d7ba.png" width="400"/>
+    
+
+    <img src="https://user-images.githubusercontent.com/47405655/160805223-bca233af-75e7-4b25-82b3-31d412026557.png" width="400"/>
 
