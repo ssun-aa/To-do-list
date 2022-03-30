@@ -4,14 +4,26 @@ import TodoItem from "./TodoItem";
 import { useTodoState } from "../TodoContext";
 
 const TodoListBlock = styled.div`
-  flex: 1;
+  flex: 1; /*영역 전체 차지*/
   padding: 20px 32px;
   padding-bottom: 48px;
   overflow-y: auto;
 `;
 
 const TodoList = () => {
-  return <TodoListBlock></TodoListBlock>;
+  const todos = useTodoState();
+  return (
+    <TodoListBlock>
+      {todos.map((todo) => (
+        <TodoItem
+          key={todo.id}
+          id={todo.id}
+          done={todo.done}
+          text={todo.text}
+        />
+      ))}
+    </TodoListBlock>
+  );
 };
 
 export default TodoList;
