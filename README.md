@@ -1,6 +1,6 @@
 # To-Do-List 2022.03 ~ 진행 중 ~
 
-### 📑context API에대해 실습하기 위한 간단한 To-Do-List입니다📑  <br /><br /><br/>
+### 📑context API에 대해 공부하기 위한 간단한 To-Do-List입니다📑  <br /><br /><br/>
   
 ## 기술 스택
 ---
