@@ -39,11 +39,14 @@ const TodoHead = () => {
     day: "numeric",
   });
   const weekday = date.toLocaleString("ko-Kr", { weekday: "long" });
+
   return (
     <TodoDateBlock>
       <h1>{today}</h1>
       <div className="day">{weekday}</div>
-      <TasksLeft>할일 {undoneTask}개 남음</TasksLeft>
+      <TasksLeft>
+        할일 {undoneTask}/{todos.length}개 남음
+      </TasksLeft>
     </TodoDateBlock>
   );
 };

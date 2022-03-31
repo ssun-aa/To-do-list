@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { MdDone, MdDelete } from "react-icons/md";
 import { useTodoDispatch } from "../TodoContext";
@@ -48,10 +48,11 @@ const CheckCircle = styled.div`
     `}
 `;
 
-const Text = styled.div`
-  flex: 1;
+const Input = styled.input`
+  width: 360px;
   font-size: 21px;
   color: #495057;
+  border: none;
   ${(props) =>
     props.done &&
     css`
@@ -60,16 +61,24 @@ const Text = styled.div`
 `;
 
 const TodoItem = ({ id, done, text }) => {
+  const [value, setValue] = useState(text);
   const dispatch = useTodoDispatch();
   const onToggle = () => dispatch({ type: "TOGGLE", id });
   const onRemove = () => dispatch({ type: "REMOVE", id });
+  const onChange = (e) => setValue(e.target.value);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    dispatch({ type: "EDIT", todo: { id: id, text: value, done: done } });
+  };
   return (
     <div>
       <TodoItemBlock>
         <CheckCircle done={done} onClick={onToggle}>
           {done && <MdDone />}
         </CheckCircle>
-        <Text done={done}>{text}</Text>
+        <form onSubmit={onSubmit}>
+          <Input done={done} value={value} onChange={onChange}></Input>
+        </form>
         <Remove onClick={onRemove}>
           <MdDelete />
         </Remove>
