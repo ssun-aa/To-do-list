@@ -1,4 +1,4 @@
-# To-Do-List 2022.03 ~ 진행 중 ~
+# To-Do-List 2022.03 
 
 ### 📑context API에 대해 공부하기 위한 간단한 To-Do-List입니다📑  <br /><br /><br/>
   
@@ -8,7 +8,7 @@
 
 * 언어
     * html
-    * css
+    * css(styled component)
     * javascript<br/><br/>
 
 * 프레임워크
