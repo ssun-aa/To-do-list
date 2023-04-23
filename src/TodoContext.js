@@ -7,21 +7,21 @@ import React, {
 } from "react";
 
 const initialTodos = [
-  // {
-  //   id: 1,
-  //   text: "일기 쓰기",
-  //   done: true,
-  // },
-  // {
-  //   id: 2,
-  //   text: "밥 먹기",
-  //   done: false,
-  // },
-  // {
-  //   id: 3,
-  //   text: "씻기",
-  //   done: false,
-  // },
+  {
+    id: 1,
+    text: "일기 쓰기",
+    done: true,
+  },
+  {
+    id: 2,
+    text: "밥 먹기",
+    done: false,
+  },
+  {
+    id: 3,
+    text: "씻기",
+    done: false,
+  },
 ];
 
 const todoReducer = (state, action) => {
@@ -48,10 +48,7 @@ const TodoDispatchContext = createContext();
 const TodoNextIdContext = createContext();
 
 export const TodoProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(todoReducer, [], () => {
-    const localData = localStorage.getItem("todolist");
-    return localData ? JSON.parse(localData) : initialTodos;
-  });
+  const [state, dispatch] = useReducer(todoReducer, initialTodos);
   const nextId = useRef(state.length + 1);
 
   useEffect(() => {
