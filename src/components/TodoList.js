@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import TodoItem from "./TodoItem";
-import { useTodoState } from "../TodoContext";
+import { useSelector } from "react-redux";
 
 const TodoListBlock = styled.div`
   flex: 1; /*영역 전체 차지*/
@@ -11,7 +11,8 @@ const TodoListBlock = styled.div`
 `;
 
 const TodoList = () => {
-  const todos = useTodoState();
+  const todos = useSelector((state) => state);
+
   return (
     <TodoListBlock>
       {todos.map((todo) => (

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useTodoState } from "../TodoContext";
+import { useSelector } from "react-redux";
 
 const TodoDateBlock = styled.div`
   h1 {
@@ -28,7 +28,7 @@ const TasksLeft = styled.div`
 `;
 
 const TodoHead = () => {
-  const todos = useTodoState();
+  const todos = useSelector((state) => state);
   const undoneTask = todos.filter((todo) => !todo.done).length;
 
   const date = new Date();

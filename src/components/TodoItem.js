@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { MdDone, MdDelete } from "react-icons/md";
-import { useTodoDispatch } from "../TodoContext";
+import { useDispatch } from "react-redux";
+import { toggleTodo, removeTodo, editTodo } from "../redux";
+// import { toggleTodo, removeTodo, editTodo } from "../redux-toolkit";
 
 const Remove = styled.div`
   display: flex;
@@ -62,13 +64,13 @@ const Input = styled.input`
 
 const TodoItem = ({ id, done, text }) => {
   const [value, setValue] = useState(text);
-  const dispatch = useTodoDispatch();
-  const onToggle = () => dispatch({ type: "TOGGLE", id });
-  const onRemove = () => dispatch({ type: "REMOVE", id });
+  const dispatch = useDispatch();
+  const onToggle = () => dispatch(toggleTodo(id));
+  const onRemove = () => dispatch(removeTodo(id));
   const onChange = (e) => setValue(e.target.value);
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch({ type: "EDIT", todo: { id: id, text: value, done: done } });
+    dispatch(editTodo(id, value)); //toolkit : {}
   };
   return (
     <div>
