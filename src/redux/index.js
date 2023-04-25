@@ -1,10 +1,9 @@
 /* 액션 타입 선언 */
-const CREATE = "CREATE";
-const TOGGLE = "TOGGLE";
-const REMOVE = "REMOVE";
-const EDIT = "EDIT";
+const CREATE = 'CREATE';
+const TOGGLE = 'TOGGLE';
+const REMOVE = 'REMOVE';
+const EDIT = 'EDIT';
 
-/* 액션 생성함수 선언 */
 let nextId = 4;
 
 export const createTodo = (text) => {
@@ -38,17 +37,17 @@ export const editTodo = (id, text) => ({
 const initialState = [
   {
     id: 1,
-    text: "일기 쓰기",
+    text: '일기 쓰기',
     done: true,
   },
   {
     id: 2,
-    text: "밥 먹기",
+    text: '밥 먹기',
     done: false,
   },
   {
     id: 3,
-    text: "씻기",
+    text: '씻기',
     done: false,
   },
 ];
